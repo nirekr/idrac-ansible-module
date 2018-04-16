@@ -4,6 +4,8 @@
   gather_facts: False
 
   tasks:
+  - name: Get the redfish module path
+    command: python /var/lib/awx/projects/_12__idrac_ansible_module/install.py
 
   - name: Define output file
     include_tasks: create_output_file.yml type=SystemInventory
