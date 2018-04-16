@@ -4,15 +4,10 @@
   gather_facts: False
 
   tasks:
-  - name: Clone idrac from github
-    git:
-      repo: https://github.com/nirekr/idrac-ansible-module.git
-      dest: /opt/awx/idrac-ansible-module
-
   - name: Get the redfish module path
     command: python install.py
     args:
-     chdir: pwd
+     chdir: /var/lib/awx/projects/_12__idrac_ansible_module/
 
   - name: Define output file
     include_tasks: create_output_file.yml type=SystemInventory
