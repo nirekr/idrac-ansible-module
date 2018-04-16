@@ -10,7 +10,7 @@
       dest: /opt/awx/
 
   - name: Get the redfish module path
-    command: python install.py
+    command: python /opt/awx/idrac-ansible-module/install.py
 
   - name: Define output file
     include_tasks: create_output_file.yml type=SystemInventory
