@@ -17,7 +17,6 @@
 
   - name: Getting system inventory
     local_action: >
-       pwd
        redfish category=Inventory command=GetSystemInventory baseuri={{baseuri}}
        user={{user}} password={{password}}
     register: result
