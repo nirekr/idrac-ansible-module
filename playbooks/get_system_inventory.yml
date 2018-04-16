@@ -11,7 +11,8 @@
 
   - name: Get the redfish module path
     command: python install.py
-    chdir: pwd
+    args:
+     chdir: pwd
 
   - name: Define output file
     include_tasks: create_output_file.yml type=SystemInventory
