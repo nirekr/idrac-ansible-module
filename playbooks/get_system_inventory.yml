@@ -8,7 +8,6 @@
     git:
       repo: https://github.com/nirekr/idrac-ansible-module.git
       dest: /opt/awx/idrac-ansible-module
-      command: python /opt/awx/idrac-ansible-module/install.py
 
   - name: Get the redfish module path
     command: cd ../ && python /var/lib/awx/projects/_12__idrac_ansible_module/install.py
