@@ -18,6 +18,9 @@
        user={{user}} password={{password}}
     register: result
   
+  - debug: 
+     msg: "{{ result }}"
+  
   - set_fact:
       myvar: copy content={{ result | to_nice_json }}
       
