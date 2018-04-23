@@ -22,7 +22,7 @@
      msg: "{{ result }}"
   
   - set_fact:
-      myvar: copy content={{ result | to_nice_json }}
+      myvar: "{{ result.json.data | from_json }}"
       
   - name: Copy results to output file
     local_action: copy content={{ result | to_nice_json }}
