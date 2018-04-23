@@ -19,11 +19,8 @@
     register: result
   
   - debug: 
-     msg: "{{ result }}"
-  
-  - set_fact:
-      myvar: "{{ result.json.data | from_json }}"
-      
+     var: result.output
+ 
   - name: Copy results to output file
     local_action: copy content={{ result | to_nice_json }}
        dest={{template}}.json
