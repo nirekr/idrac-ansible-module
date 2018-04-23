@@ -19,7 +19,7 @@
     register: result
   
   - debug: 
-     var: result.output
+     var: result.stdout_lines
  
   - name: Copy results to output file
     local_action: copy content={{ result | to_nice_json }}
