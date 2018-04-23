@@ -17,6 +17,9 @@
        redfish category=Inventory command=GetSystemInventory baseuri={{baseuri}}
        user={{user}} password={{password}}
     register: result
+  
+  - set_fact:
+      myvar:  "{{ result.stdout | from_json }}"
 
   - name: Copy results to output file
     local_action: copy content={{ result | to_nice_json }}
