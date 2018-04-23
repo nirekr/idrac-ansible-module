@@ -18,9 +18,8 @@
        user={{user}} password={{password}}
     register: result
   
-  - name: Parse results of system-inventory
-    setfact:
-      myvar: "{{ result.stdout | to_nice_json }}"
+  - set_fact:
+      myvar: "{{ result.stdout }}"
       
   - name: Copy results to output file
     local_action: copy content={{ result | to_nice_json }}
