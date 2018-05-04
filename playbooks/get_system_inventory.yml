@@ -7,7 +7,7 @@
   - name: Get the redfish module path
     command: python install.py
     args:
-     chdir: /var/lib/awx/projects/_6__idrac_ansible_module
+     chdir: pwd
 
   - name: Define output file
     include_tasks: create_output_file.yml type=SystemInventory
