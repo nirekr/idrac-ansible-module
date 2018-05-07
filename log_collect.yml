@@ -1,5 +1,5 @@
 - name: Gather log files 
-  hosts: nexus switch
+  hosts: nexus_switch
   become: yes  
   
   tasks:    
