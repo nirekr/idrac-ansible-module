@@ -12,8 +12,4 @@
         recurse: yes    
       register: log_files    
     
-    - name: Grab files      
-      fetch:        
-         src: "{{ item.path }}"        
-         dest: "/tmp/LOGS_{{ Ansible_fqdn }}/"     
-      with_items: "{{ log_files.files }}"
+    
